@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Desa Cibeusi - Pesona Alam dan Budaya</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#8BC34A',
+                        'text-dark': '#333',
+                        'text-light': '#666',
+                        'bg-light': '#f8f8f8',
+                        'bg-dark': '#222',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: theme('colors.text-dark');
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled .hamburger span {
+            background-color: theme('colors.white');
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+
+</head>
+<body class="font-poppins text-text-dark overflow-x-hidden">
+
+    <nav class="navbar fixed top-0 left-0 w-full z-50 bg-white py-4 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-5 flex justify-between items-center">
+            <a href="#" class="logo text-primary text-3xl font-bold transition-colors duration-300">Cibeusi</a>
+            <ul class="nav-links hidden md:flex space-x-8">
+                <li><a href="#home" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Beranda</a></li>
+                <li><a href="#about" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Tentang Kami</a></li>
+                <li><a href="#gallery" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Galeri</a></li>
+                <li><a href="#advantages" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Keunggulan</a></li>
+                <li><a href="#destinations" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Destinasi</a></li>
+                <li><a href="#contact" class="nav-link text-text-dark font-semibold hover:text-primary transition-colors">Kontak</a></li>
+            </ul>
+            <div class="hamburger md:hidden flex flex-col justify-between w-6 h-5 cursor-pointer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-links-mobile fixed top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-8 text-2xl transform -translate-y-full transition-transform duration-300 ease-in-out md:hidden z-40">
+            <li><a href="#home" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Beranda</a></li>
+            <li><a href="#about" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Tentang Kami</a></li>
+            <li><a href="#gallery" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Galeri</a></li>
+            <li><a href="#advantages" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Keunggulan</a></li>
+            <li><a href="#destinations" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Destinasi</a></li>
+            <li><a href="#contact" class="nav-link-mobile text-text-dark hover:text-primary transition-colors">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero-section relative h-screen bg-cover bg-center flex justify-center items-center text-center text-white pt-24" style="background-image: url('img/hero.jpg');">
+        <div class="hero-content relative z-20 max-w-4xl p-5">
+            <h1 class="text-6xl md:text-7xl font-bold mb-4 leading-tight">Selamat Datang di <br><span class="text-secondary">Desa Wisata Cibeusi</span></h1>
+            <p class="text-lg md:text-xl mb-8 text-white/90">Jelajahi keindahan alam, budaya lokal, dan keramahan penduduk Desa Cibeusi.</p>
+            <a href="#about" class="btn inline-block bg-primary text-white py-3 px-8 rounded-full font-semibold hover:bg-secondary transition-all duration-300 shadow-lg">Pelajari Lebih Lanjut</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section py-24 overflow-hidden">
+        <div class="container mx-auto px-5 flex flex-col md:flex-row items-center gap-12">
+            <div class="about-content flex-1 text-center md:text-left">
+                <h2 class="text-4xl font-bold text-primary mb-10 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mx-auto md:after:mx-0 after:mt-2 after:rounded">Tentang Desa Cibeusi</h2>
+                <p class="text-lg text-text-light mb-4">Desa Cibeusi adalah permata tersembunyi yang menawarkan perpaduan sempurna antara keindahan alam pedesaan, tradisi budaya yang kaya, dan keramahan penduduk lokal. Terletak di kaki pegunungan dengan hamparan sawah hijau, sungai jernih, dan udara segar, Cibeusi adalah destinasi ideal bagi Anda yang mencari ketenangan dan pengalaman otentik.</p>
+                <p class="text-lg text-text-light">Kami berkomitmen untuk menjaga kelestarian alam dan budaya, sekaligus memberikan pengalaman wisata yang tak terlupakan bagi setiap pengunjung.</p>
+            </div>
+            <div class="about-image flex-1 text-center">
+                <img src="img/about.jpg" alt="Pemandangan Desa Cibeusi" class="max-w-full h-auto rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section py-24 bg-bg-light overflow-hidden">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-bold text-primary mb-10 text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mx-auto after:mt-2 after:rounded">Foto-Foto Desa Cibeusi</h2>
+            <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <img src="img/gallery/foto1.jpg" alt="Foto Desa 1" class="w-full h-auto object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer md:col-span-2 md:row-span-2">
+                <img src="img/gallery/foto2.jpg" alt="Foto Desa 2" class="w-full h-64 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer md:col-span-2">
+                <img src="img/gallery/foto3.jpg" alt="Foto Desa 3" class="w-full h-64 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+                <img src="img/gallery/foto4.jpg" alt="Foto Desa 4" class="w-full h-64 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+                <img src="img/gallery/foto5.jpg" alt="Foto Desa 5" class="w-full h-auto object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer md:row-span-2">
+                <img src="img/gallery/foto6.jpg" alt="Foto Desa 6" class="w-full h-64 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages-section py-24 overflow-hidden">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-bold text-primary mb-10 text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mx-auto after:mt-2 after:rounded">Keunggulan Desa Kami</h2>
+            <div class="advantages-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="advantage-item bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                    <img src="img/icons/icon-nature.png" alt="Ikon Alam" class="w-16 h-16 mx-auto mb-5">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Keindahan Alam Asri</h3>
+                    <p class="text-text-light">Hamparan sawah hijau, sungai yang mengalir jernih, dan udara pegunungan yang segar.</p>
+                </div>
+                <div class="advantage-item bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                    <img src="img/icons/icon-culture.png" alt="Ikon Budaya" class="w-16 h-16 mx-auto mb-5">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Kekayaan Budaya Lokal</h3>
+                    <p class="text-text-light">Saksikan langsung tradisi, kesenian, dan kearifan lokal yang masih terjaga.</p>
+                </div>
+                <div class="advantage-item bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                    <img src="img/icons/icon-hospitality.png" alt="Ikon Keramahan" class="w-16 h-16 mx-auto mb-5">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Keramahan Penduduk</h3>
+                    <p class="text-text-light">Rasakan sambutan hangat dan keakraban dari masyarakat Desa Cibeusi.</p>
+                </div>
+                <div class="advantage-item bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
+                    <img src="img/icons/icon-food.png" alt="Ikon Kuliner" class="w-16 h-16 mx-auto mb-5">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Kuliner Khas Desa</h3>
+                    <p class="text-text-light">Nikmati hidangan lezat dan otentik yang diolah dari hasil bumi lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations" class="destinations-section py-24 bg-bg-light overflow-hidden">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-bold text-primary mb-10 text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mx-auto after:mt-2 after:rounded">Destinasi Wisata Unggulan</h2>
+            <div class="destinations-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="destination-card group bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02] cursor-pointer">
+                    <img src="img/destinations/curug-malela.jpg" alt="Curug Malela" class="w-full h-56 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-2">Curug Malela</h3>
+                        <p class="text-text-light mb-4">Air terjun eksotis dengan formasi batuan unik, sering disebut "Niagara Mini".</p>
+                        <a href="#" class="inline-block bg-primary text-white py-2 px-5 rounded-full text-sm font-semibold hover:bg-secondary transition-colors duration-300">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="destination-card group bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02] cursor-pointer">
+                    <img src="img/destinations/kebun-teh.jpg" alt="Kebun Teh" class="w-full h-56 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-2">Hamparan Kebun Teh</h3>
+                        <p class="text-text-light mb-4">Pemandangan hijau yang menenangkan, cocok untuk trekking dan fotografi.</p>
+                        <a href="#" class="inline-block bg-primary text-white py-2 px-5 rounded-full text-sm font-semibold hover:bg-secondary transition-colors duration-300">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="destination-card group bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02] cursor-pointer">
+                    <img src="img/destinations/sawah.jpg" alt="Persawahan" class="w-full h-56 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-2">Terasering Sawah</h3>
+                        <p class="text-text-light mb-4">Keindahan terasering sawah yang memukau, menawarkan pengalaman pedesaan sejati.</p>
+                        <a href="#" class="inline-block bg-primary text-white py-2 px-5 rounded-full text-sm font-semibold hover:bg-secondary transition-colors duration-300">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-bg-dark text-white py-16 lg:py-24">
+        <div class="container mx-auto px-5 flex flex-wrap justify-between gap-10">
+            <div class="footer-about w-full md:w-1/3 mb-8 md:mb-0">
+                <h3 class="text-2xl font-semibold text-secondary mb-4">Wisata Desa Cibeusi</h3>
+                <p class="text-white/80 leading-relaxed">Jelajahi pesona alam dan budaya di Desa Cibeusi. Hubungi kami untuk informasi lebih lanjut dan rencana kunjungan Anda!</p>
+            </div>
+            <div class="footer-links w-full md:w-1/4 mb-8 md:mb-0">
+                <h3 class="text-2xl font-semibold text-secondary mb-4">Tautan Cepat</h3>
+                <ul>
+                    <li class="mb-2"><a href="#home" class="text-white/80 hover:text-primary transition-colors">Beranda</a></li>
+                    <li class="mb-2"><a href="#about" class="text-white/80 hover:text-primary transition-colors">Tentang Kami</a></li>
+                    <li class="mb-2"><a href="#gallery" class="text-white/80 hover:text-primary transition-colors">Galeri</a></li>
+                    <li class="mb-2"><a href="#destinations" class="text-white/80 hover:text-primary transition-colors">Destinasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact w-full md:w-1/4">
+                <h3 class="text-2xl font-semibold text-secondary mb-4">Kontak Kami</h3>
+                <p class="text-white/80 mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> Desa Cibeusi, Kecamatan, Kabupaten, Provinsi</p>
+                <p class="text-white/80 mb-2"><i class="fas fa-phone mr-2 text-primary"></i> +62 812-3456-7890</p>
+                <p class="text-white/80 mb-4"><i class="fas fa-envelope mr-2 text-primary"></i> info@desacibeusi.com</p>
+                <div class="social-icons flex space-x-4">
+                    <a href="#" class="text-white text-2xl hover:text-primary transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-2xl hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-2xl hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom w-full text-center mt-10 pt-8 border-t border-white/10">
+            <p class="text-white/60">&copy; 2025 Wisata Desa Cibeusi. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
