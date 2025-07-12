@@ -210,31 +210,34 @@ document.addEventListener("DOMContentLoaded", () => {
  const modalActivities = document.getElementById('modalActivities');
 
  const destinationsData = {
-     "curug-malela": {
-         image: "img/destinations/curug-malela.jpg",
-         title: "Curug Malela",
-         description: "Curug Malela adalah air terjun yang megah dengan formasi batuan unik, menyerupai tirai lebar seperti air terjun Niagara versi mini. Terletak di tengah lanskap pedesaan yang asri, menawarkan pemandangan menakjubkan dan udara segar yang cocok untuk refreshing dari hiruk pikuk kota. Pengunjung dapat menikmati keindahan alam sambil berendam di kolam alami di bawah air terjun. Area ini juga ideal untuk fotografi alam dan piknik keluarga, dengan beberapa warung makan sederhana yang menyediakan hidangan lokal.",
-         location: "Jl. Cibeusi,Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat ",
-         facilities: ["Area Parkir Luas", "Toilet Umum", "Warung Makanan/Minuman", "Mushola"],
-         activities: "Berendam di kolam alami, fotografi, piknik, trekking ringan.",
-     },
-     "kebun-teh": {
-         image: "img/destinations/kebun-teh.jpg",
-         title: "Hamparan Kebun Teh",
-         description: "Nikmati pemandangan hijau tak berujung dari hamparan kebun teh yang terhampar luas di perbukitan Cibeusi. Area ini sangat cocok untuk trekking ringan, bersepeda, atau sekadar menikmati udara pegunungan yang sejuk sambil berfoto dengan latar belakang perkebunan teh yang ikonik. Tersedia juga warung teh lokal untuk mencicipi teh segar langsung dari kebun. Pengalaman memetik teh dan melihat proses pengolahannya juga bisa menjadi daya tarik tambahan.",
-         location: "Jl. Cibeusi,Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat ",
-         facilities: ["Area Parkir", "Cafe Teh", "Spot Foto Instagramable"],
-         activities: "Trekking, bersepeda, fotografi, memetik daun teh (musiman), mencicipi teh.",
-     },
-     "terasering-sawah": {
-         image: "img/destinations/sawah.jpg",
-         title: "Terasering Sawah",
-         description: "Saksikan keindahan terasering sawah yang memukau, menampilkan kearifan lokal pertanian tradisional. Pemandangan ini berubah sesuai musim tanam, dari hijau pekat hingga kuning keemasan, menawarkan spot foto yang instagramable dan pengalaman pedesaan sejati. Anda juga bisa berinteraksi langsung dengan petani lokal dan belajar tentang cara bertanam padi. Pengunjung seringkali menemukan ketenangan dan inspirasi di tengah hamparan sawah yang damai ini.",
-         location: "Jl. Cibeusi,Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat ",
-         facilities: ["Homestay Terdekat", "Pemandu Lokal", "Area Kuliner Desa"],
-         activities: "Belajar bertani, berinteraksi dengan petani, fotografi, bersepeda di pedesaan, menikmati kuliner lokal.",
-     }
- };
+  // PERHATIKAN: ID BERUBAH DARI "curug-malela" MENJADI "curug-cibareubeuy"
+  "curug-cibareubeuy": {
+      image: "img/destinations/curug-cibareubeuy.jpg", // Menggunakan gambar yang sudah ada, Anda bisa mengganti ini
+      title: "Curug Cibareubeuy",
+      description: "Curug Cibareubeuy adalah air terjun bertingkat yang menakjubkan dengan kolam-kolam alami di setiap tingkatannya, sempurna untuk berendam dan menikmati kesegaran alam. Terletak di tengah lanskap yang masih alami, tempat ini menawarkan ketenangan dan keindahan yang luar biasa. Jalur menuju curug juga merupakan pengalaman trekking yang menyenangkan, melewati perkebunan dan hutan kecil.",
+      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+      facilities: ["Area Parkir", "Toilet Umum", "Warung Makanan Sederhana"],
+      activities: "Berendam, trekking, fotografi alam, menikmati suasana tenang.",
+  },
+  // PERHATIKAN: ID BERUBAH DARI "kebun-teh" MENJADI "saung-lahang"
+  "saung-lahang": {
+      image: "img/destinations/saung-lahang.png", // Gambar saung lahang
+      title: "Saung Lahang",
+      description: "Rasakan pengalaman unik mencicipi 'lahang' (nira aren) segar langsung dari sadapan pohon aren di Saung Lahang. Saung tradisional ini menawarkan suasana pedesaan yang otentik, di mana Anda bisa bersantai sambil menikmati minuman manis alami dan hidangan ringan khas desa. Ini adalah tempat sempurna untuk mengenal lebih dekat proses pembuatan gula aren dan budaya lokal.",
+      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+      facilities: ["Area Duduk Santai", "Warung Minuman Tradisional", "Spot Foto Unik"],
+      activities: "Mencicipi lahang segar, bersantai, belajar tentang pohon aren, interaksi budaya.",
+  },
+  // PERHATIKAN: ID BERUBAH DARI "terasering-sawah" MENJADI "curug-ciangin"
+  "curug-ciangin": {
+      image: "img/destinations/curug-ciangin.jpg", // Gambar curug ciangin
+      title: "Curug Ciangin",
+      description: "Curug Ciangin adalah permata tersembunyi dengan air terjun yang mengalir deras di tengah tebing batu. Dikelilingi pepohonan rindang dan udara pegunungan yang sejuk, tempat ini cocok untuk menenangkan diri dan menikmati keindahan alam. Kolam di bawah curug mengundang untuk direndam, sementara suara gemericik air memberikan relaksasi. Akses menuju curug membutuhkan sedikit usaha, namun pemandangan yang disajikan sepadan.",
+      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+      facilities: ["Area Parkir Terdekat", "Jalur Trekking Sederhana"],
+      activities: "Menikmati air terjun, fotografi, relaksasi di alam terbuka, trekking.",
+  }
+};
 
  function showModal(id) {
      // PERBAIKAN DI SINI: Langsung akses destinationsData[id]
