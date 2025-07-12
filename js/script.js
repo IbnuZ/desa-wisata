@@ -200,86 +200,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
  // --- Pop-up Detail Destinasi ---
  const detailButtons = document.querySelectorAll('.btn-detail');
- const detailModal = document.getElementById('detailModal');
- const closeModalBtn = document.getElementById('closeModalBtn');
- const modalImage = document.getElementById('modalImage');
- const modalTitle = document.getElementById('modalTitle');
- const modalDescription = document.getElementById('modalDescription');
- const modalLocation = document.getElementById('modalLocation');
- const modalFacilities = document.getElementById('modalFacilities');
- const modalActivities = document.getElementById('modalActivities');
+    const detailModal = document.getElementById('detailModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalFacilities = document.getElementById('modalFacilities');
+    const modalActivities = document.getElementById('modalActivities');
+    const modalMapsLink = document.getElementById('modalMapsLink'); // AKTIFKAN KEMBALI VARIABEL INI
 
- const destinationsData = {
-  // PERHATIKAN: ID BERUBAH DARI "curug-malela" MENJADI "curug-cibareubeuy"
-  "curug-cibareubeuy": {
-      image: "img/destinations/curug-cibareubeuy.jpg", // Menggunakan gambar yang sudah ada, Anda bisa mengganti ini
-      title: "Curug Cibareubeuy",
-      description: "Curug Cibareubeuy adalah air terjun bertingkat yang menakjubkan dengan kolam-kolam alami di setiap tingkatannya, sempurna untuk berendam dan menikmati kesegaran alam. Terletak di tengah lanskap yang masih alami, tempat ini menawarkan ketenangan dan keindahan yang luar biasa. Jalur menuju curug juga merupakan pengalaman trekking yang menyenangkan, melewati perkebunan dan hutan kecil.",
-      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
-      facilities: ["Area Parkir", "Toilet Umum", "Warung Makanan Sederhana"],
-      activities: "Berendam, trekking, fotografi alam, menikmati suasana tenang.",
-  },
-  // PERHATIKAN: ID BERUBAH DARI "kebun-teh" MENJADI "saung-lahang"
-  "saung-lahang": {
-      image: "img/destinations/saung-lahang.png", // Gambar saung lahang
-      title: "Saung Lahang",
-      description: "Rasakan pengalaman unik mencicipi 'lahang' (nira aren) segar langsung dari sadapan pohon aren di Saung Lahang. Saung tradisional ini menawarkan suasana pedesaan yang otentik, di mana Anda bisa bersantai sambil menikmati minuman manis alami dan hidangan ringan khas desa. Ini adalah tempat sempurna untuk mengenal lebih dekat proses pembuatan gula aren dan budaya lokal.",
-      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
-      facilities: ["Area Duduk Santai", "Warung Minuman Tradisional", "Spot Foto Unik"],
-      activities: "Mencicipi lahang segar, bersantai, belajar tentang pohon aren, interaksi budaya.",
-  },
-  // PERHATIKAN: ID BERUBAH DARI "terasering-sawah" MENJADI "curug-ciangin"
-  "curug-ciangin": {
-      image: "img/destinations/curug-ciangin.jpg", // Gambar curug ciangin
-      title: "Curug Ciangin",
-      description: "Curug Ciangin adalah permata tersembunyi dengan air terjun yang mengalir deras di tengah tebing batu. Dikelilingi pepohonan rindang dan udara pegunungan yang sejuk, tempat ini cocok untuk menenangkan diri dan menikmati keindahan alam. Kolam di bawah curug mengundang untuk direndam, sementara suara gemericik air memberikan relaksasi. Akses menuju curug membutuhkan sedikit usaha, namun pemandangan yang disajikan sepadan.",
-      location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
-      facilities: ["Area Parkir Terdekat", "Jalur Trekking Sederhana"],
-      activities: "Menikmati air terjun, fotografi, relaksasi di alam terbuka, trekking.",
-  }
-};
+    const destinationsData = {
+        "curug-cibareubeuy": {
+            image: "img/destinations/curug-cibareubeuy.jpg",
+            title: "Curug Cibareubeuy",
+            description: "Curug Cibareubeuy adalah air terjun bertingkat yang menakjubkan dengan kolam-kolam alami di setiap tingkatannya, sempurna untuk berendam dan menikmati kesegaran alam. Terletak di tengah lanskap yang masih alami, tempat ini menawarkan ketenangan dan keindahan yang luar biasa. Jalur menuju curug juga merupakan pengalaman trekking yang menyenangkan, melewati perkebunan dan hutan kecil.",
+            location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+            facilities: ["Area Parkir", "Toilet Umum", "Warung Makanan Sederhana"],
+            activities: "Berendam, trekking, fotografi alam, menikmati suasana tenang.",
+            mapsLink: "https://www.google.com/maps/place/Curug+Cibareubeuy/data=!4m2!3m1!1s0x0:0x399d2a05a1301d09?sa=X&ved=1t:2428&ictx=111" // URL Maps Curug Cibareubeuy
+        },
+        "saung-lahang": {
+            image: "img/destinations/saung-lahang.png",
+            title: "Saung Lahang",
+            description: "Rasakan pengalaman unik mencicipi 'lahang' (nira aren) segar langsung dari sadapan pohon aren di Saung Lahang. Saung tradisional ini menawarkan suasana pedesaan yang otentik, di mana Anda bisa bersantai sambil menikmati minuman manis alami dan hidangan ringan khas desa. Ini adalah tempat sempurna untuk mengenal lebih dekat proses pembuatan gula aren dan budaya lokal.",
+            location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+            facilities: ["Area Duduk Santai", "Warung Minuman Tradisional", "Spot Foto Unik"],
+            activities: "Mencicipi lahang segar, bersantai, belajar tentang pohon aren, interaksi budaya.",
+            mapsLink: "https://www.google.com/maps/place/Saung+Lahang+Mang+Entoy/@-6.762862,107.6760116,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68df004d7b7e23:0x3e3df3529945c834!8m2!3d-6.762862!4d107.680625!16s%2Fg%2F11wr4jwy95?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" // URL Maps Saung Lahang
+        },
+        "curug-ciangin": {
+            image: "img/destinations/curug-ciangin.jpg",
+            title: "Curug Ciangin",
+            description: "Curug Ciangin adalah permata tersembunyi dengan air terjun yang mengalir deras di tengah tebing batu. Dikelilingi pepohonan rindang dan udara pegunungan yang sejuk, tempat ini cocok untuk menenangkan diri dan menikmati keindahan alam. Kolam di bawah curug mengundang untuk direndam, sementara suara gemericik air memberikan relaksasi. Akses menuju curug membutuhkan sedikit usaha, namun pemandangan yang disajikan sepadan.",
+            location: "Jl. Cibeusi, Nagrak, Kec. Ciater, Kabupaten Subang, Jawa Barat",
+            facilities: ["Area Parkir Terdekat", "Jalur Trekking Sederhana"],
+            activities: "Menikmati air terjun, fotografi, relaksasi di alam terbuka, trekking.",
+            mapsLink: "https://www.google.com/maps/place/Curug+Ciangin/@-6.7394834,107.6765247,17z/data=!4m6!3m5!1s0x2e692018158aa613:0x2bda2c30d4b8cecf!8m2!3d-6.7394834!4d107.6790996!16s%2Fg%2F11c5bdv18v?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" // URL Maps Curug Ciangin
+        }
+    };
 
- function showModal(id) {
-     // PERBAIKAN DI SINI: Langsung akses destinationsData[id]
-     const destination = destinationsData[id];
-     
-     if (destination) { // Pastikan destinasi ditemukan
-         modalImage.src = destination.image;
-         modalTitle.textContent = destination.title;
-         modalDescription.textContent = destination.description;
-         modalLocation.innerHTML = `<i class="fas fa-map-marker-alt mr-2 text-primary"></i> ${destination.location}`;
+    function showModal(id) {
+        const destination = destinationsData[id];
 
-         if (destination.facilities && destination.facilities.length > 0) {
-             modalFacilities.style.display = 'block';
-             const ulElement = modalFacilities.querySelector('ul');
-             ulElement.innerHTML = '';
-             destination.facilities.forEach(item => {
-                 const li = document.createElement('li');
-                 li.textContent = item;
-                 ulElement.appendChild(li);
-             });
-         } else {
-             modalFacilities.style.display = 'none';
-         }
+        if (destination) {
+            modalImage.src = destination.image;
+            modalTitle.textContent = destination.title;
+            modalDescription.textContent = destination.description;
+            modalLocation.innerHTML = `<i class="fas fa-map-marker-alt mr-2 text-primary"></i> ${destination.location}`;
 
-         if (destination.activities) {
-             modalActivities.style.display = 'block';
-             modalActivities.querySelector('p').textContent = destination.activities;
-         } else {
-             modalActivities.style.display = 'none';
-         }
+            if (destination.facilities && destination.facilities.length > 0) {
+                modalFacilities.style.display = 'block';
+                const ulElement = modalFacilities.querySelector('ul');
+                ulElement.innerHTML = '';
+                destination.facilities.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    ulElement.appendChild(li);
+                });
+            } else {
+                modalFacilities.style.display = 'none';
+            }
 
-         gsap.to(detailModal, { opacity: 1, pointerEvents: 'auto', duration: 0.3 });
-         gsap.fromTo(detailModal.querySelector('.modal-content'),
-             { y: 50, scale: 0.95, opacity: 0 },
-             { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.7)' }
-         );
+            if (destination.activities) {
+                modalActivities.style.display = 'block';
+                modalActivities.querySelector('p').textContent = destination.activities;
+            } else {
+                modalActivities.style.display = 'none';
+            }
 
-         document.body.style.overflow = 'hidden';
-     } else {
-         console.error("Destinasi dengan ID '" + id + "' tidak ditemukan.");
-     }
- }
+            // AKTIFKAN KEMBALI LOGIKA INI UNTUK TOMBOL MAPS
+            if (modalMapsLink && destination.mapsLink) {
+                modalMapsLink.href = destination.mapsLink;
+                modalMapsLink.style.display = 'inline-block';
+            } else if (modalMapsLink) { // Sembunyikan jika tidak ada link maps
+                modalMapsLink.style.display = 'none';
+            }
+
+
+            gsap.to(detailModal, { opacity: 1, pointerEvents: 'auto', duration: 0.3 });
+            gsap.fromTo(detailModal.querySelector('.modal-content'),
+                { y: 50, scale: 0.95, opacity: 0 },
+                { y: 0, scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(1.7)' }
+            );
+
+            document.body.style.overflow = 'hidden';
+        } else {
+            console.error("Destinasi dengan ID '" + id + "' tidak ditemukan.");
+        }
+    }
 
  function hideModal() {
      gsap.to(detailModal.querySelector('.modal-content'),

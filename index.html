@@ -613,32 +613,33 @@
     </footer>
 
     <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[9999] opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="modal-content bg-transparent border border-white rounded-lg shadow-xl max-w-xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
-            <div class="relative bg-white rounded-t-lg overflow-hidden">
-                <img id="modalImage" src="" alt="Detail Destinasi" class="w-full h-64 object-cover">
-                <button id="closeModalBtn" class="absolute top-4 right-4 text-white text-3xl p-4 rounded-full bg-black/50 hover:bg-black/70 transition-colors">
-                    ×
-                </button>
-            </div>
-            <div class="p-6 bg-white">
-                <h3 id="modalTitle" class="text-3xl font-bold text-primary mb-4"></h3>
-                <p id="modalLocation" class="text-sm text-text-light mt-2 mb-4"></p>
-                <p id="modalDescription" class="text-lg text-text-light leading-relaxed mb-4 text-justify"></p>
-                <div id="modalFacilities" class="mb-4">
-                    <h4 class="text-xl font-semibold text-primary mb-2">Fasilitas Tersedia:</h4>
-                    <ul class="list-disc list-inside text-text-light text-base">
-                        </ul>
-                </div>
-                <div id="modalActivities" class="mb-4">
-                    <h4 class="text-xl font-semibold text-primary mb-2">Aktivitas yang Bisa Dilakukan:</h4>
-                    <p class="text-text-light text-base">
-                        </p>
-                </div>
+      <div class="modal-content bg-transparent border border-white rounded-lg shadow-xl max-w-xl w-full max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
+          <div class="relative bg-white rounded-t-lg overflow-hidden">
+              <img id="modalImage" src="" alt="Detail Destinasi" class="w-full h-64 object-cover">
+              <button id="closeModalBtn" class="absolute top-4 right-4 text-white text-3xl p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors">
+                  ×
+              </button>
+          </div>
+          <div class="p-6 bg-white">
+              <h3 id="modalTitle" class="text-3xl font-bold text-primary mb-4"></h3>
+              <p id="modalLocation" class="text-sm text-text-light mt-2 mb-4"><i class="fas fa-map-marker-alt mr-2 text-primary"></i></p>
+              <p id="modalDescription" class="text-lg text-text-light leading-relaxed mb-4 text-justify"></p>
+              <div id="modalFacilities" class="mb-4">
+                  <h4 class="text-xl font-semibold text-primary mb-2">Fasilitas Tersedia:</h4>
+                  <ul class="list-disc list-inside text-text-light text-base">
+                      </ul>
+              </div>
+              <div id="modalActivities" class="mb-4">
+                  <h4 class="text-xl font-semibold text-primary mb-2">Aktivitas yang Bisa Dilakukan:</h4>
+                  <p class="text-text-light text-base">
+                      </p>
+              </div>
 
-                </div>
-        </div>
-    </div>
-
+              <div class="mt-6 flex justify-end"> <a id="modalMapsLink" href="#" target="_blank" class="btn inline-block bg-blue-500 text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">Kunjungi di Peta</a>
+              </div>
+              </div>
+      </div>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
